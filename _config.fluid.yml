@@ -87,11 +87,11 @@ fun_features:
 
     # 打印速度，数字越大越慢
     # Typing speed, the larger the number, the slower
-    typeSpeed: 40
+    typeSpeed: 45
 
     # 游标字符
     # Cursor character
-    cursorChar: "~"
+    cursorChar: "|"
 
     # 是否循环播放效果
     # If true, loop animation
@@ -461,12 +461,12 @@ index:
   # 头图高度，屏幕百分比
   # Height ratio of banner image
   # Available: 0 - 100
-  banner_img_height: 40
+  banner_img_height: 45
 
   # 头图黑色蒙版的不透明度，available: 0 - 1.0， 1 是完全不透明
   # Opacity of the banner mask, 1.0 is completely opaque
   # Available: 0 - 1.0
-  banner_mask_alpha: 0.7
+  banner_mask_alpha: 0.3
 
   # 首页副标题的独立设置
   # Independent config of home page subtitle
@@ -949,17 +949,16 @@ tag:
 about:
   enable: true
   banner_img: /img/banner_20240311.png
-  banner_img_height: 70
-  banner_mask_alpha: 0.5
-  avatar: /img/logo.png
+  banner_img_height: 45
+  banner_mask_alpha: 0.3
+  avatar: /img/avatar.png
   name: "oNya"
   intro: "From here, Everything"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com/ValiViz", tip: "GitHub" }
-    - { class: "iconfont icon-qq-fill", text: "3540483746", tip: "QQ: StrontiumR" }
-    - { class: "iconfont icon-mail", mail: "ValiViz@163.com", tip: "ValiViz@163.com" }
+    - { class: "iconfont icon-mail", tip: "ValiViz@163.com" }
 
 
 #---------------------------
@@ -971,7 +970,7 @@ about:
 #---------------------------
 page:
   banner_img: /img/default.png
-  banner_img_height: 60
+  banner_img_height: 45
   banner_mask_alpha: 0.3
 
 
