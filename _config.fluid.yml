@@ -52,7 +52,7 @@ code:
 
     # 代码块是否显示行号
     # If true, the code block display line numbers
-    line_number: true
+    line_number: false
 
     # 实现高亮的库，对应下面的设置
     # Highlight library
@@ -87,7 +87,7 @@ fun_features:
 
     # 打印速度，数字越大越慢
     # Typing speed, the larger the number, the slower
-    typeSpeed: 100
+    typeSpeed: 200
 
     # 游标字符
     # Cursor character
@@ -100,7 +100,7 @@ fun_features:
     # 在指定页面开启，不填则在所有页面开启
     # Enable in specified page, all pages by default
     # Options: home | post | tag | category | about | links | page | 404
-    scope: [home, post]
+    scope: [home, 404]
 
   # 为文章内容中的标题添加锚图标
   # Add an anchor icon to the title on the post page
@@ -146,9 +146,9 @@ color:
   # 顶部菜单背景色
   # Color of navigation bar background
   # navbar_bg_color: "#2f4154"
-  navbar_bg_color: "#a4341a"
+  navbar_bg_color: "#f9823e"
   # navbar_bg_color_dark: "#1f3144"
-  navbar_bg_color_dark: "#a4341a"
+  navbar_bg_color_dark: "#ac4411b"
 
   # 顶部菜单字体色
   # Color of navigation bar text
@@ -381,7 +381,7 @@ banner:
 
   # 图片最小的宽高比，以免图片两边被过度裁剪，适用于移动端竖屏时，如需关闭设为 0
   # Minimum ratio of width to height, applicable to the vertical screen of mobile device, if you need to close it, set it to 0
-  width_height_ratio: 1.0
+  width_height_ratio: 0.8
 
 # 向下滚动的箭头
 # Scroll down arrow
@@ -476,7 +476,7 @@ index:
 
     # 为空则按 hexo config.subtitle 显示
     # If empty, text based on `subtitle` in hexo config
-    text: "漫天星辰宛如瞳仁参透混沌"
+    text: "漫天星辰 宛如瞳仁 参透混沌\n为何此时 忤逆常理 扪心自问"
 
     # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation

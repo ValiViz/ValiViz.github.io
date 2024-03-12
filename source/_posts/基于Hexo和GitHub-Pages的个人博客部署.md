@@ -22,7 +22,7 @@ banner_img: /attachments/post_1/hexo.png
 
 ## 安装git
 
-[git: --fast-version-control](https://git-scm.com/)
+[git](https://git-scm.com/)
 
 ## 安装Node.js
 
@@ -141,12 +141,10 @@ jobs:
 
 在blog/的`.gitignore`文件中删去`node_modules/`，以解决本地资源文件与远程仓库不同步的问题。
 
-```
 {% note warnning %}
 原设计的目的是解耦，以实现模块化和规范化，**但我不会！！！**
 有能力者另请参阅[^3]中`缺失之环-β`章节。
 {% endnote %}
-```
 
 ## 推送
 
@@ -176,5 +174,5 @@ Branch: `gh-pages` `/(root)`
 
 [^1]: [概述 | Hexo](https://hexo.io/zh-cn/docs/)
 [^2]: [在 GitHub Pages 上部署 Hexo | Hexo](https://hexo.io/zh-cn/docs/github-pages)
-[^3]: [Hexo 博客搭建指北 | KGL.BLOG (kongolou.github.io)](https://kongolou.github.io/post/Hexo-博客搭建指北.html)
+[^3]: [Hexo 博客搭建指北 | KGL.BLOG)](https://kongolou.github.io/post/Hexo-博客搭建指北.html)
 [^4]: [利用hexo在GItHub上建立个人博客？ - 知乎](https://www.zhihu.com/question/39326923/answer/3120401540)
