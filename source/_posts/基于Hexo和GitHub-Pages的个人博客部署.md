@@ -6,7 +6,8 @@ tags:
   - GItHub
   - Git
   - Blog
-categories: "- 教程"
+categories: 
+- 教程
 index_img: /attachments/post_1/hexo.png
 banner_img: /attachments/post_1/hexo.png
 ---
@@ -141,7 +142,7 @@ jobs:
 
 在blog/的`.gitignore`文件中删去`node_modules/`，以解决本地资源文件与远程仓库不同步的问题。
 
-{% note warnning %}
+{% note warning %}
 原设计的目的是解耦，以实现模块化和规范化，**但我不会！！！**
 有能力者另请参阅[^3]中`缺失之环-β`章节。
 {% endnote %}
