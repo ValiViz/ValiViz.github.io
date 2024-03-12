@@ -4,18 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "c0bd75e84eea304c",
+        "id": "524499971839d9e7",
         "type": "tabs",
         "children": [
           {
-            "id": "4e25002f8930de97",
+            "id": "2e87a39875577aac",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "基于Hexo和GitHub-Pages的个人博客部署.md",
+                "file": "ds-list.md",
                 "mode": "source",
-                "source": true
+                "source": false
               }
             }
           }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "45e5fd53dad5c6e7",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "基于Hexo和GitHub-Pages的个人博客部署.md",
+                "file": "ds-list.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "基于Hexo和GitHub-Pages的个人博客部署.md",
+                "file": "ds-list.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "基于Hexo和GitHub-Pages的个人博客部署.md"
+                "file": "ds-list.md"
               }
             }
           }
@@ -146,10 +147,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "4e25002f8930de97",
+  "active": "2e87a39875577aac",
   "lastOpenFiles": [
-    "hello-world.md",
     "基于Hexo和GitHub-Pages的个人博客部署.md",
+    "ds-list.md",
+    "hello-world.md",
     "attachments-基于Hexo和GitHub-Pages的个人博客搭建/hexo.png",
     "attachments-基于Hexo和GitHub-Pages的个人博客搭建",
     "基于Hexo和GitHub-Pages的个人博客搭建",
