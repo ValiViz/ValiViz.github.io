@@ -28,9 +28,9 @@ h6:hover > .anchorjs-link {
   -webkit-backface-visibility: hidden;
   transition: transform 0.05s ease-out;
 }
-@media (max-width: 100vh) {
+@media (max-width: 80vh) {
   .header-inner {
-    max-height: 100vw;
+    max-height: 125vw;
   }
   #board {
     margin-top: -1rem !important;
@@ -844,7 +844,7 @@ i.iconfont {
   --link-hover-color: #30a9de;
   --link-hover-bg-color: #f8f9fa;
   --line-color: #eaecef;
-  --navbar-bg-color: #a4341a;
+  --navbar-bg-color: #f9823e;
   --navbar-text-color: #fff;
   --subtitle-color: #fff;
   --scrollbar-color: #c4c6c9;
@@ -871,7 +871,7 @@ i.iconfont {
     --link-hover-color: #30a9de;
     --link-hover-bg-color: #364151;
     --line-color: #435266;
-    --navbar-bg-color: #a4341a;
+    --navbar-bg-color: #ac4411b;
     --navbar-text-color: #d0d0d0;
     --subtitle-color: #d0d0d0;
     --scrollbar-color: #687582;
@@ -909,7 +909,7 @@ i.iconfont {
     --link-hover-color: #30a9de;
     --link-hover-bg-color: #364151;
     --line-color: #435266;
-    --navbar-bg-color: #a4341a;
+    --navbar-bg-color: #ac4411b;
     --navbar-text-color: #d0d0d0;
     --subtitle-color: #d0d0d0;
     --scrollbar-color: #687582;
