@@ -2,9 +2,7 @@
 title: Hello World
 date: 2024/3/11 13:02:00
 comments: "true"
-tags:
-  - PS3
-  - Games
+tags: []
 categories: |-2
    - Diary
    - Test

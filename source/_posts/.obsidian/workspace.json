@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "hello-world.md",
+                "file": "基于Hexo和GitHub-Pages的个人博客部署.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "hello-world.md",
+                "file": "基于Hexo和GitHub-Pages的个人博客部署.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "hello-world.md",
+                "file": "基于Hexo和GitHub-Pages的个人博客部署.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "hello-world.md"
+                "file": "基于Hexo和GitHub-Pages的个人博客部署.md"
               }
             }
           }
@@ -147,5 +147,12 @@
     }
   },
   "active": "4e25002f8930de97",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "hello-world.md",
+    "基于Hexo和GitHub-Pages的个人博客部署.md",
+    "attachments-基于Hexo和GitHub-Pages的个人博客搭建/hexo.png",
+    "attachments-基于Hexo和GitHub-Pages的个人博客搭建",
+    "基于Hexo和GitHub-Pages的个人博客搭建",
+    "新建文件夹"
+  ]
 }
