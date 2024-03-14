@@ -60,80 +60,80 @@ typedef struct
 ```
 
 ```C
-Status InitList(SqList *plist)
+Status InitList(SqList *L)
 {
-	plist->length = 0;
+	L->length = 0;
 	return OK;
 }
 
-Status ListEmpty(SqList list)
+Status ListEmpty(const SqList *L)
 {
-	if(list.length == 0)
+	if(L->length == 0)
 		return TRUE;
 	else
 		return FALSE;
 }
 
-Status ClearList(SqList *plist)
+Status ClearList(SqList *L)
 {
-	plist->length = 0;
+	L->length = 0;
 	return OK;
 }
 
-Status GetElem(SqList list, int i, ElemType *pe)
+Status GetElem(const SqList *L, int i, ElemType *E)
 {
-	if (list.length == 0 || i < 0 || i >= list.length)
+	if (L->length == 0 || i < 0 || i >= L->length)
 		return ERROR;
-	*pe = list.data[i];
+	*E = L->data[i];
 	return OK;
 }
 
-int LocateElem(SqList list, ElemType e)
+int LocateElem(const SqList *L, const ElemType *E)
 {
-	for (int i = 0; i < list.length; i++)
+	for (int i = 0; i < L->length; i++)
 	{
-		if (list.data[i] == e)
+		if (L->data[i] == *E)
 			return i;
 	}
-	return 0;
+	return -1;
 }
 
-Status ListInsert(SqList *plist, int i, ElemType e)
+Status ListInsert(SqList *L, int i, const ElemType *E)
 {
 	
-	if (i >= plist->length || i < 0 || plist->length >= MAXSIZE)
+	if (i > L->length || i < 0 || L->length >= MAXSIZE)
 		return ERROR;
-	for (int j = plist->length; j > i; j--)
-		plist->data[j] = plist->data[j - 1];
-	plist->data[i] = e;
-	plist->length++;
+	for (int j = L->length; j > i; j--)
+		L->data[j] = L->data[j - 1];
+	L->data[i] = *E;
+	L->length++;
 	return OK;
 }
 
-Status ListDelete(SqList *plist, int i, ElemType *e)
+Status ListDelete(SqList *L, int i, ElemType *E)
 {
-	if (i >= plist->length || i < 0 || plist->length <= 0)
+	if (i >= L->length || i < 0 || L->length <= 0)
 		return ERROR;
-	*e = plist->data[i];
-	plist->length--;
-	for (; i < plist->length; i++)
+	*E = L->data[i];
+	L->length--;
+	for (; i < L->length; i++)
 	{
-		plist->data[i] = plist->data[i + 1];
+		L->data[i] = L->data[i + 1];
 	}
 	return OK;
 }
 
-int ListLength(SqList list)
+int ListLength(const SqList *L)
 {
-	return list.length;
+	return L->length;
 }
 
-Status ListTraverse(SqList *plist, Status (*func_visit)())
+Status ListTraverse(SqList *L, Status (*func_visit)(ElemType *E))
 {
-	if (plist->length <= 0)
+	if (L->length <= 0)
 		return ERROR;
-	for (int i = 0; i < plist->length; i++)
-		if (!func_visit(plist->data[i]))
+	for (int i = 0; i < L->length; i++)
+		if (!func_visit(L->data[i]))
 			return ERROR;
 	return OK;
 }
@@ -149,6 +149,104 @@ Status unionL(SqList *desk, const SqList *src)
 				return ERROR;
 		return OK;
 	}
+}
+```
+
+# 链式存储
+
+```C
+typedef struct Node
+{
+    ElemType data;
+    struct Node *next;
+} Node;
+typedef struct
+{
+    int length;
+    Node *first;
+    Node *last;
+} LinkList;
+```
+
+```C
+Status InitList(LinkList *L)
+{
+    L->length = 0;
+    L->first = NULL;
+    L->last = NULL;
+    return OK;
+}
+
+Status ListEmpty(const LinkList *L)
+{
+    if (!L->length)
+        return FALSE;
+    return TRUE;
+}
+
+Status ClearList(LinkList *L)
+{
+    InitList(L);
+    return OK;
+}
+
+Status GetElem(const LinkList *L, int i, ElemType *E)
+{
+    if (L->length == 0 || i < 0 || i >= L->length)
+        return ERROR;
+    Node *now = L->first;
+    for (int j = 0; j < i; j++)
+    {
+        now = now->next;
+    }
+    *E = now->data;
+    return OK;
+}
+
+int LocateElem(const LinkList *L, const ElemType *E)
+{
+    Node *now = L->first;
+    for (int i = 0; i < L->length; i++)
+    {
+        if (now->data = *E)
+            return i;
+        now = now->next;
+    }
+    return -1;
+}
+
+Status ListInsert(LinkList *L, int i, const ElemType *E)
+{
+    if (i > L->length || i < 0)
+		return ERROR;
+    Node *tmp = L->first;
+    if (i == 0)
+    {
+        L->first = (Node *)malloc(sizeof(Node));
+        L->first->data = *E;
+        L->first->next = tmp;
+    }
+    else if(i == L->length)
+    {
+        L->last->next = (Node *)malloc(sizeof(Node));
+        L->last = L->last->next;
+        L->last->data = *E;
+        L->last->next = NULL;
+    }
+    else
+    {
+        Node *now = tmp;
+        for(int j = 1; j < i; j++)
+        {
+            now = now->next;
+        }
+        tmp = now->next;
+        now->next = (Node *)malloc(sizeof(Node));
+        now->next->data = *E;
+        now->next->next = tmp;
+    }
+    L->length++;
+    return OK;
 }
 ```
 
