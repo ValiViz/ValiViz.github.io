@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ds-list.md",
+                "file": "To-Tell-About-Something.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "45e5fd53dad5c6e7",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ds-list.md",
+                "file": "To-Tell-About-Something.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ds-list.md",
+                "file": "To-Tell-About-Something.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ds-list.md"
+                "file": "To-Tell-About-Something.md"
               }
             }
           }
@@ -149,8 +148,8 @@
   },
   "active": "2e87a39875577aac",
   "lastOpenFiles": [
-    "基于Hexo和GitHub-Pages的个人博客部署.md",
     "ds-list.md",
+    "基于Hexo和GitHub-Pages的个人博客部署.md",
     "hello-world.md",
     "attachments-基于Hexo和GitHub-Pages的个人博客搭建/hexo.png",
     "attachments-基于Hexo和GitHub-Pages的个人博客搭建",
