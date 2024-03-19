@@ -24,7 +24,7 @@
 <meta property="og:description" content="零个或多个数据元素的有限序列，分为顺序存储结构和链式存储结构两大结构，其中链式存储结构分为单链表、静态链表、循环链表、双向链表等">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-12T19:20:00.000Z">
-<meta property="article:modified_time" content="2024-03-16T10:23:32.514Z">
+<meta property="article:modified_time" content="2024-03-19T11:35:46.996Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Boilplate">
 <meta name="twitter:card" content="summary_large_image">
@@ -232,7 +232,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          782 字
+          811 字
         
       </span>
     
@@ -286,34 +286,41 @@
               <div class="markdown-body">
                 
                 <h1 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h1><div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span></code></pre></div>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
 
-<div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">define</span> OK 1</span>
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> OK 1</span>
 <span class="hljs-meta">#<span class="hljs-keyword">define</span> ERROR 0</span>
 <span class="hljs-meta">#<span class="hljs-keyword">define</span> TRUE 1</span>
 <span class="hljs-meta">#<span class="hljs-keyword">define</span> FALSE 0</span>
-<span class="hljs-meta">#<span class="hljs-keyword">define</span> MAXSIZE max_size（注意替换）</span></code></pre></div>
+<span class="hljs-meta">#<span class="hljs-keyword">define</span> MAXSIZE max_size（注意替换）</span>
 
-<div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> data_type（注意替换） ELemType;
 <span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Status;</code></pre></div>
 
 <h1 id="Operation"><a href="#Operation" class="headerlink" title="Operation"></a>Operation</h1><div class="note note-info">
             <p>本文中的第i个元素均<strong>从0开始</strong>，到length-1结束。</p>
           </div>
 
-<div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">visit</span><span class="hljs-params">(*pe)</span>; <span class="hljs-comment">//读取或更改元素e</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">visit</span><span class="hljs-params">(*E)</span>; <span class="hljs-comment">//读取或更改元素e</span></code></pre></div>
 
-<div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(*pL)</span>; <span class="hljs-comment">//初始化操作，建立一个空的线性表L。</span>
-Status <span class="hljs-title function_">ListEmpty</span><span class="hljs-params">(L)</span>; <span class="hljs-comment">//若线性表为空，返回true，否则返回false。</span>
-Status <span class="hljs-title function_">ClearList</span><span class="hljs-params">(*pL)</span>; <span class="hljs-comment">//将线性表清空。</span>
-Status <span class="hljs-title function_">GetElem</span><span class="hljs-params">(L, i, *pe)</span>; <span class="hljs-comment">//将线性表L中的第i个位置元素值返回给e。</span>
-<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(L, e)</span>; <span class="hljs-comment">//在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功；否则，返回0表示失败。</span>
-Status <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(*pL, i, e)</span>; <span class="hljs-comment">//在线性表L中的第i个位置插入新元素e。</span>
-Status <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(*pL, i, *e)</span>; <span class="hljs-comment">//删除线性表L中第i个位置元素，并用e返回其值。</span>
-<span class="hljs-type">int</span> <span class="hljs-title function_">ListLength</span><span class="hljs-params">(L)</span>; <span class="hljs-comment">//返回线性表L的元素个数。</span>
-Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-params">(*pL)</span>; <span class="hljs-comment">//依次访问线性表L的每个元素。</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//初始化操作，建立一个空的线性表L。</span>
+Status <span class="hljs-title function_">ListEmpty</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//若线性表为空，返回true，否则返回false。</span>
+Status <span class="hljs-title function_">ClearList</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//将线性表清空。</span>
+Status <span class="hljs-title function_">GetElem</span><span class="hljs-params">(*L, i, *E)</span>; <span class="hljs-comment">//将线性表L中的第i个位置元素值返回给e。</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(*L, *E, compar)</span>; <span class="hljs-comment">//在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功；否则，返回0表示失败。</span>
+Status <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(*L, i, *E)</span>; <span class="hljs-comment">//在线性表L中的第i个位置插入新元素e。</span>
+Status <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(*L, i, *E)</span>; <span class="hljs-comment">//删除线性表L中第i个位置元素，并用e返回其值。</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">ListLength</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//返回线性表L的元素个数。</span>
+Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//依次访问线性表L的每个元素。</span></code></pre></div>
 
 <h1 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h1><div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span>
+<span class="hljs-class">&#123;</span>
+    <span class="hljs-type">char</span> title[<span class="hljs-number">51</span>];
+    <span class="hljs-type">char</span> author[<span class="hljs-number">21</span>];
+    <span class="hljs-type">char</span> publish[<span class="hljs-number">31</span>];
+    <span class="hljs-type">char</span> data[<span class="hljs-number">11</span>];
+&#125; ElemType;
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span>
 <span class="hljs-class">&#123;</span>
 	ElemType data[MAXSIZE];
 	<span class="hljs-type">int</span> length;
@@ -347,11 +354,16 @@ Status <span class="hljs-title function_">GetElem</span><span class="hljs-params
 	<span class="hljs-keyword">return</span> OK;
 &#125;
 
-<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(<span class="hljs-type">const</span> SqList *L, <span class="hljs-type">const</span> ElemType *E)</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">compar</span><span class="hljs-params">(<span class="hljs-type">const</span> ElemType *Ea, <span class="hljs-type">const</span> ElemType *Eb)</span>
+&#123;
+    （注意替换）
+&#125;
+
+<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(<span class="hljs-type">const</span> SqList *L, <span class="hljs-type">const</span> ElemType *E, <span class="hljs-type">int</span> (*compar)(<span class="hljs-type">const</span> ElemType *, <span class="hljs-type">const</span> ElemType *))</span>
 &#123;
 	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; L-&gt;length; i++)
 	&#123;
-		<span class="hljs-keyword">if</span> (L-&gt;data[i] == *E)
+		<span class="hljs-keyword">if</span> (compar(&amp;L-&gt;data[i], E) == <span class="hljs-number">0</span>)
 			<span class="hljs-keyword">return</span> i;
 	&#125;
 	<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
@@ -392,7 +404,7 @@ Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-p
 	<span class="hljs-keyword">if</span> (L-&gt;length &lt;= <span class="hljs-number">0</span>)
 		<span class="hljs-keyword">return</span> ERROR;
 	<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; L-&gt;length; i++)
-		<span class="hljs-keyword">if</span> (!func_visit(L-&gt;data[i]))
+		<span class="hljs-keyword">if</span> (!func_visit(&amp;L-&gt;data[i]))
 			<span class="hljs-keyword">return</span> ERROR;
 	<span class="hljs-keyword">return</span> OK;
 &#125;
@@ -402,9 +414,9 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
 	ElemType e;
 	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; src-&gt;length; i++)
 	&#123;
-		GetElem(*src, i, &amp;e);
-		<span class="hljs-keyword">if</span>(!LocateElem(*desk, e))
-			<span class="hljs-keyword">if</span>(!ListInsert(desk, desk-&gt;length, e))
+		GetElem(src, i, &amp;e);
+		<span class="hljs-keyword">if</span>(!LocateElem(desk, &amp;e, compar))
+			<span class="hljs-keyword">if</span>(!ListInsert(desk, desk-&gt;length, &amp;e))
 				<span class="hljs-keyword">return</span> ERROR;
 		<span class="hljs-keyword">return</span> OK;
 	&#125;
