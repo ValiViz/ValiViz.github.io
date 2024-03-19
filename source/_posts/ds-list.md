@@ -13,18 +13,13 @@ excerpt: 零个或多个数据元素的有限序列，分为顺序存储结构�
 ```C
 #include <stdio.h>
 #include <stdlib.h>
-```
 
-```C
 #define OK 1
 #define ERROR 0
 #define TRUE 1
 #define FALSE 0
 #define MAXSIZE max_size（注意替换）
-```
 
-```C
-typedef data_type（注意替换） ELemType;
 typedef int Status;
 ```
 
@@ -35,24 +30,32 @@ typedef int Status;
 {% endnote %}
 
 ```C
-Status visit(*pe); //读取或更改元素e
+Status visit(*E); //读取或更改元素e
 ```
 
 ```C
-Status InitList(*pL); //初始化操作，建立一个空的线性表L。
-Status ListEmpty(L); //若线性表为空，返回true，否则返回false。
-Status ClearList(*pL); //将线性表清空。
-Status GetElem(L, i, *pe); //将线性表L中的第i个位置元素值返回给e。
-int LocateElem(L, e); //在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功；否则，返回0表示失败。
-Status ListInsert(*pL, i, e); //在线性表L中的第i个位置插入新元素e。
-Status ListDelete(*pL, i, *e); //删除线性表L中第i个位置元素，并用e返回其值。
-int ListLength(L); //返回线性表L的元素个数。
-Status ListTraverse(*pL); //依次访问线性表L的每个元素。
+Status InitList(*L); //初始化操作，建立一个空的线性表L。
+Status ListEmpty(*L); //若线性表为空，返回true，否则返回false。
+Status ClearList(*L); //将线性表清空。
+Status GetElem(*L, i, *E); //将线性表L中的第i个位置元素值返回给e。
+int LocateElem(*L, *E, compar); //在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功；否则，返回0表示失败。
+Status ListInsert(*L, i, *E); //在线性表L中的第i个位置插入新元素e。
+Status ListDelete(*L, i, *E); //删除线性表L中第i个位置元素，并用e返回其值。
+int ListLength(*L); //返回线性表L的元素个数。
+Status ListTraverse(*L); //依次访问线性表L的每个元素。
 ```
 
 # 顺序存储
 
 ```C
+typedef struct
+{
+    char title[51];
+    char author[21];
+    char publish[31];
+    char data[11];
+} ElemType;
+
 typedef struct
 {
 	ElemType data[MAXSIZE];
@@ -89,11 +92,16 @@ Status GetElem(const SqList *L, int i, ElemType *E)
 	return OK;
 }
 
-int LocateElem(const SqList *L, const ElemType *E)
+int compar(const ElemType *Ea, const ElemType *Eb)
+{
+    （注意替换）
+}
+
+int LocateElem(const SqList *L, const ElemType *E, int (*compar)(const ElemType *, const ElemType *))
 {
 	for (int i = 0; i < L->length; i++)
 	{
-		if (L->data[i] == *E)
+		if (compar(&L->data[i], E) == 0)
 			return i;
 	}
 	return -1;
@@ -134,7 +142,7 @@ Status ListTraverse(SqList *L, Status (*func_visit)(ElemType *E))
 	if (L->length <= 0)
 		return ERROR;
 	for (int i = 0; i < L->length; i++)
-		if (!func_visit(L->data[i]))
+		if (!func_visit(&L->data[i]))
 			return ERROR;
 	return OK;
 }
@@ -144,9 +152,9 @@ Status unionL(SqList *desk, const SqList *src)
 	ElemType e;
 	for(int i = 0; i < src->length; i++)
 	{
-		GetElem(*src, i, &e);
-		if(!LocateElem(*desk, e))
-			if(!ListInsert(desk, desk->length, e))
+		GetElem(src, i, &e);
+		if(!LocateElem(desk, &e, compar))
+			if(!ListInsert(desk, desk->length, &e))
 				return ERROR;
 		return OK;
 	}
