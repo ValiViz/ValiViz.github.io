@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ds-list.md",
+                "file": "离散数学.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ds-list.md",
+                "file": "离散数学.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ds-list.md",
+                "file": "离散数学.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ds-list.md"
+                "file": "离散数学.md"
               }
             }
           }
@@ -148,8 +148,9 @@
   },
   "active": "2e87a39875577aac",
   "lastOpenFiles": [
-    "To-Tell-About-Something.md",
+    "title.md",
     "ds-list.md",
+    "To-Tell-About-Something.md",
     "基于Hexo和GitHub-Pages的个人博客部署.md",
     "hello-world.md",
     "attachments-基于Hexo和GitHub-Pages的个人博客搭建/hexo.png",
