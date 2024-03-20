@@ -299,7 +299,7 @@ lazyload:
 
   # 加载时的占位图片
   # The placeholder image when loading
-  loading_img: /img/loading_1.gif
+  loading_img: /img/loading.gif
 
   # 开启后懒加载仅在文章页生效，如果自定义页面需要使用，可以在 Front-matter 里指定 `lazyload: true`
   # If true, only enable lazyload on the post page. For custom pages, you can set 'lazyload: true' in front-matter
@@ -457,7 +457,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -529,7 +529,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
   banner_img_height: 35
   banner_mask_alpha: 0.3
 
@@ -892,7 +892,7 @@ discuss:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
   banner_img_height: 35
   banner_mask_alpha: 0.3
 
@@ -903,7 +903,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
   banner_img_height: 35
   banner_mask_alpha: 0.3
 
@@ -932,7 +932,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
   banner_img_height: 80
   banner_mask_alpha: 0
   tagcloud:
@@ -949,7 +949,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
   banner_img_height: 80
   banner_mask_alpha: 0
   avatar: /img/avatar_shian.png
@@ -970,7 +970,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
   banner_img_height: 35
   banner_mask_alpha: 0.3
 
@@ -981,7 +981,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
   banner_img_height: 85
   banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
@@ -995,7 +995,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/banner_20240314.png
+  banner_img: /img/banner_20240320.png
   banner_img_height: 35
   banner_mask_alpha: 0.3
   # 友链的成员项
