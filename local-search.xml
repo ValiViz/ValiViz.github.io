@@ -4,6 +4,32 @@
   
   
   <entry>
+    <title>离散数学</title>
+    <link href="/2024/03/20/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"/>
+    <url>/2024/03/20/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</url>
+    
+    <content type="html"><![CDATA[<p>$$a^2+b^2&#x3D;c^2$$</p><span class="katex-error" title="ParseError: KaTeX parse error: Can&#x27;t use function &#x27;$&#x27; in math mode at position 1: $̲$c = \pm\sqrt{a…" style="color:#cc0000">$$c = \pm\sqrt{a^2 + b^2}$$</span>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>title</title>
+    <link href="/2024/03/20/title/"/>
+    <url>/2024/03/20/title/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>线性表(List)</title>
     <link href="/2024/03/12/ds-list/"/>
     <url>/2024/03/12/ds-list/</url>
