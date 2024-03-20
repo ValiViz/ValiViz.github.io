@@ -6,10 +6,11 @@ tags:
   - GItHub
   - Git
   - Blog
-categories: 
-- 教程
+categories:
+  - 教程
 index_img: /attachments/post_1/hexo.png
 banner_img: /attachments/post_1/hexo.png
+Vol: "001"
 ---
 # 拥有GitHub账号
 

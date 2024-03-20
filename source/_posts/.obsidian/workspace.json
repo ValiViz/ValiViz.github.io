@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "离散数学.md",
+                "file": "逻辑语言.md",
                 "mode": "source",
                 "source": false
               }
@@ -65,11 +65,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "45e5fd53dad5c6e7",
@@ -85,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "离散数学.md",
+                "file": "逻辑语言.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "离散数学.md",
+                "file": "逻辑语言.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "离散数学.md"
+                "file": "逻辑语言.md"
               }
             }
           }
@@ -148,11 +150,13 @@
   },
   "active": "2e87a39875577aac",
   "lastOpenFiles": [
-    "title.md",
-    "ds-list.md",
-    "To-Tell-About-Something.md",
-    "基于Hexo和GitHub-Pages的个人博客部署.md",
+    "Vol.4_LaTeX语法with离散数学.md",
+    "逻辑语言.md",
+    "Vol.2_数据结构-线性表.md",
+    "Vol.1_基于Hexo和GitHub-Pages的个人博客部署.md",
+    "Vol.3_Let's-Talk-Talk.md",
     "hello-world.md",
+    "title.md",
     "attachments-基于Hexo和GitHub-Pages的个人博客搭建/hexo.png",
     "attachments-基于Hexo和GitHub-Pages的个人博客搭建",
     "基于Hexo和GitHub-Pages的个人博客搭建",

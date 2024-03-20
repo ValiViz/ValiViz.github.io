@@ -1,8 +1,9 @@
 ---
-title: To Tell About Something
+title: Talk About Something
 date: 2024-03-13 16:37:01
 hide: "true"
-permalink: totellsome/
+permalink: hiddentalk/
+Vol: "003"
 ---
 # 理性与感性的统一
 
