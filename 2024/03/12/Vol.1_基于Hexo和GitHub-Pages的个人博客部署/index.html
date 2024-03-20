@@ -16,16 +16,16 @@
   <meta name="author" content="oNya">
   <meta name="keywords" content="">
   
-    <meta name="description" content="拥有GitHub账号GitHub: Let’s build from here 搭建环境创建GitHub仓库创建仓库名为username（注意替换）.github.io的GitHub仓库，不附带README.md文件。 安装gitgit 安装Node.jsNode.js 安装Hexo在本地选择一个路径，新建博客文件夹blog&#x2F;，在博客文件夹内右键空白处，选择Open Git Bash here，输">
+    <meta name="description" content="拥有GitHub账号 GitHub: Let’s build from here 搭建环境 创建GitHub仓库 创建仓库名为username（注意替换）.github.io的GitHub仓库，不附带README.md文件。 安装git git 安装Node.js Node.js 安装Hexo 在本地选择一个路径，新建博客文件夹blog&#x2F;，在博客文件夹内右键空白处，选择Open Git Bash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于Hexo和GitHub Pages的个人博客部署">
 <meta property="og:url" content="http://valiviz.github.io/2024/03/12/Vol.1_%E5%9F%BA%E4%BA%8EHexo%E5%92%8CGitHub-Pages%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/">
 <meta property="og:site_name" content="oNya&#39;s Everything">
-<meta property="og:description" content="拥有GitHub账号GitHub: Let’s build from here 搭建环境创建GitHub仓库创建仓库名为username（注意替换）.github.io的GitHub仓库，不附带README.md文件。 安装gitgit 安装Node.jsNode.js 安装Hexo在本地选择一个路径，新建博客文件夹blog&#x2F;，在博客文件夹内右键空白处，选择Open Git Bash here，输">
+<meta property="og:description" content="拥有GitHub账号 GitHub: Let’s build from here 搭建环境 创建GitHub仓库 创建仓库名为username（注意替换）.github.io的GitHub仓库，不附带README.md文件。 安装git git 安装Node.js Node.js 安装Hexo 在本地选择一个路径，新建博客文件夹blog&#x2F;，在博客文件夹内右键空白处，选择Open Git Bash">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://valiviz.github.io/attachments/post_1/hexo.png">
 <meta property="article:published_time" content="2024-03-12T10:00:30.000Z">
-<meta property="article:modified_time" content="2024-03-20T13:41:10.082Z">
+<meta property="article:modified_time" content="2024-03-20T13:44:29.466Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="GItHub">
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          621 字
+          620 字
         
       </span>
     
@@ -294,40 +294,46 @@
             
               <div class="markdown-body">
                 
-                <h1 id="拥有GitHub账号"><a href="#拥有GitHub账号" class="headerlink" title="拥有GitHub账号"></a>拥有GitHub账号</h1><p><a target="_blank" rel="noopener" href="https://github.com/">GitHub: Let’s build from here</a></p>
-<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><h2 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h2><p>创建仓库名为<code>username（注意替换）.github.io</code>的GitHub仓库，不附带README.md文件。</p>
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p><a target="_blank" rel="noopener" href="https://git-scm.com/">git</a></p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js</a></p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>在本地选择一个路径，新建博客文件夹<code>blog/</code>，在博客文件夹内右键空白处，选择<code>Open Git Bash here</code>，输入：</p>
+                <h1>拥有GitHub账号</h1>
+<p><a target="_blank" rel="noopener" href="https://github.com">GitHub: Let’s build from here</a></p>
+<h1>搭建环境</h1>
+<h2 id="创建GitHub仓库">创建GitHub仓库</h2>
+<p>创建仓库名为<code>username（注意替换）.github.io</code>的GitHub仓库，不附带README.md文件。</p>
+<h2 id="安装git">安装git</h2>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/">git</a></p>
+<h2 id="安装Node-js">安装Node.js</h2>
+<p><a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js</a></p>
+<h2 id="安装Hexo">安装Hexo</h2>
+<p>在本地选择一个路径，新建博客文件夹<code>blog/</code>，在博客文件夹内右键空白处，选择<code>Open Git Bash here</code>，输入：</p>
 <div class="code-wrapper"><pre><code class="hljs bash">$ npm install -g hexo-cli
 $ hexo init</code></pre></div>
-
-<h1 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h1><div class="code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">ls</span> -al ~/.ssh
+<h1>远程连接</h1>
+<div class="code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">ls</span> -al ~/.ssh
 $ ssh-keygen -t ed25519 -C <span class="hljs-string">&quot;useremail@example.com（注意替换）&quot;</span>
 （三次回车）
 $ <span class="hljs-built_in">cat</span> ~/.ssh/id_ed25519.pub</code></pre></div>
-
 <p>将打印出的公钥右键Copy。</p>
 <p>GitHub -&gt; 头像 -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH Key</p>
 <p>在Title栏取名，在Key栏粘贴刚才复制的公钥，Add SSH Key。</p>
-<h2 id="验证连接"><a href="#验证连接" class="headerlink" title="验证连接"></a>验证连接</h2><div class="code-wrapper"><pre><code class="hljs bash">$ ssh -T git@github.com</code></pre></div>
-
+<h2 id="验证连接">验证连接</h2>
+<div class="code-wrapper"><pre><code class="hljs bash">$ ssh -T git@github.com</code></pre></div>
 <p>如果匹配指纹<code>SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU</code>，则输入：</p>
 <div class="code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">yes</span></code></pre></div>
-
-<h1 id="第一次推送"><a href="#第一次推送" class="headerlink" title="第一次推送"></a>第一次推送</h1><h2 id="修改git配置"><a href="#修改git配置" class="headerlink" title="修改git配置"></a>修改git配置</h2><p>登录git，修改配置以使用main作为默认分支名称：</p>
+<h1>第一次推送</h1>
+<h2 id="修改git配置">修改git配置</h2>
+<p>登录git，修改配置以使用main作为默认分支名称：</p>
 <div class="code-wrapper"><pre><code class="hljs bash">$ git config --global user.email <span class="hljs-string">&quot;useremail@example.com（注意替换）&quot;</span>
 $ git config --global user.name <span class="hljs-string">&quot;username（注意替换）&quot;</span>
 $ git config --global init.defaultBranch main</code></pre></div>
-
-<h2 id="新建git仓库并建立连接"><a href="#新建git仓库并建立连接" class="headerlink" title="新建git仓库并建立连接"></a>新建git仓库并建立连接</h2><div class="code-wrapper"><pre><code class="hljs bash">$ git init
+<h2 id="新建git仓库并建立连接">新建git仓库并建立连接</h2>
+<div class="code-wrapper"><pre><code class="hljs bash">$ git init
 $ git remote add origin git@github.com:username/username.github.io.git（注意替换）</code></pre></div>
-
-<h2 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h2><div class="code-wrapper"><pre><code class="hljs bash">$ git add --all
+<h2 id="推送">推送</h2>
+<div class="code-wrapper"><pre><code class="hljs bash">$ git add --all
 $ git commit -m <span class="hljs-string">&quot;Add source files&quot;</span>
 $ git push -u origin main</code></pre></div>
-
-<h1 id="第二次推送"><a href="#第二次推送" class="headerlink" title="第二次推送"></a>第二次推送</h1><p>开辟新分支 gh-pages 用于展示由 main 生成的网页，将“由 main 生成网页推送到 gh-pages”这一过程交给 GitHub Actions 自动完成，为此新建文件 <code>blog/.github/workflows/pages.yml</code>，内容如下：</p>
+<h1>第二次推送</h1>
+<p>开辟新分支 gh-pages 用于展示由 main 生成的网页，将“由 main 生成网页推送到 gh-pages”这一过程交给 GitHub Actions 自动完成，为此新建文件 <code>blog/.github/workflows/pages.yml</code>，内容如下：</p>
 <div class="code-wrapper"><pre><code class="hljs yml"><span class="hljs-attr">name:</span> <span class="hljs-string">Pages</span>
 
 <span class="hljs-attr">on:</span>
@@ -362,29 +368,31 @@ $ git push -u origin main</code></pre></div>
         <span class="hljs-attr">with:</span>
           <span class="hljs-attr">github_token:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">&#125;&#125;</span>
           <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">./public</span></code></pre></div>
-
 <p>其中Node.js的版本号可以通过以下途径得知：</p>
 <ol>
 <li>安装Node.js时下载的安装包名称中包含版本号；</li>
 <li><code>win</code>+<code>R</code> -&gt; <code>cmd</code> -&gt; <code>确定</code> -&gt; <code>node -v</code>;</li>
 <li><code>$ mode -v</code>。</li>
 </ol>
-<h2 id="反解耦合设计"><a href="#反解耦合设计" class="headerlink" title="反解耦合设计"></a>反解耦合设计</h2><p>在blog&#x2F;的<code>.gitignore</code>文件中删去<code>node_modules/</code>，以解决本地资源文件与远程仓库不同步的问题。</p>
+<h2 id="反解耦合设计">反解耦合设计</h2>
+<p>在blog/的<code>.gitignore</code>文件中删去<code>node_modules/</code>，以解决本地资源文件与远程仓库不同步的问题。</p>
 <div class="note note-warning">
             <p>原设计的目的是解耦，以实现模块化和规范化，<strong>但我不会！！！</strong><br>有能力者另请参阅<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="[Hexo 博客搭建指北 | KGL.BLOG)](https://kongolou.github.io/post/Hexo-博客搭建指北.html)">[3]</span></a></sup>中<code>缺失之环-β</code>章节。</p>
           </div>
-
-<h2 id="推送-1"><a href="#推送-1" class="headerlink" title="推送"></a>推送</h2><div class="code-wrapper"><pre><code class="hljs bash">$ git add --all
+<h2 id="推送-2">推送</h2>
+<div class="code-wrapper"><pre><code class="hljs bash">$ git add --all
 $ git commit -m <span class="hljs-string">&quot;Add workflows-pages.yml&quot;</span>
 $ git push -u origin main</code></pre></div>
-
-<h1 id="切换展示分支"><a href="#切换展示分支" class="headerlink" title="切换展示分支"></a>切换展示分支</h1><p>GitHub -&gt; 博客仓库 -&gt; Settings -&gt; Pages</p>
+<h1>切换展示分支</h1>
+<p>GitHub -&gt; 博客仓库 -&gt; Settings -&gt; Pages</p>
 <p>Source: <code>Deploy from a branch</code></p>
 <p>Branch: <code>gh-pages</code> <code>/(root)</code></p>
 <p>点击<code>Save</code>。</p>
-<h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>在完成上述步骤后，访问<code>https://username.github.io</code>即可查看完成部署的博客页面。</p>
+<h1>结束语</h1>
+<p>在完成上述步骤后，访问<code>https://username.github.io</code>即可查看完成部署的博客页面。</p>
 <hr>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">概述 | Hexo</a>
+<h1>参考链接</h1>
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">概述 | Hexo</a>
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">在 GitHub Pages 上部署 Hexo | Hexo</a>
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://kongolou.github.io/post/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8C%97.html">Hexo 博客搭建指北 | KGL.BLOG)</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/39326923/answer/3120401540">利用hexo在GItHub上建立个人博客？ - 知乎</a>

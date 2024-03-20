@@ -24,7 +24,7 @@
 <meta property="og:description" content="零个或多个数据元素的有限序列，分为顺序存储结构和链式存储结构两大结构，其中链式存储结构分为单链表、静态链表、循环链表、双向链表等">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-12T19:20:00.000Z">
-<meta property="article:modified_time" content="2024-03-20T13:41:10.082Z">
+<meta property="article:modified_time" content="2024-03-20T13:44:29.466Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Boilplate">
 <meta name="twitter:card" content="summary_large_image">
@@ -289,7 +289,8 @@
             
               <div class="markdown-body">
                 
-                <h1 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h1><div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
+                <h1>预处理</h1>
+<div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
 
 <span class="hljs-meta">#<span class="hljs-keyword">define</span> OK 1</span>
@@ -299,13 +300,11 @@
 <span class="hljs-meta">#<span class="hljs-keyword">define</span> MAXSIZE max_size（注意替换）</span>
 
 <span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Status;</code></pre></div>
-
-<h1 id="Operation"><a href="#Operation" class="headerlink" title="Operation"></a>Operation</h1><div class="note note-info">
+<h1>Operation</h1>
+<div class="note note-info">
             <p>本文中的第i个元素均<strong>从0开始</strong>，到length-1结束。</p>
           </div>
-
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">visit</span><span class="hljs-params">(*E)</span>; <span class="hljs-comment">//读取或更改元素e</span></code></pre></div>
-
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//初始化操作，建立一个空的线性表L。</span>
 Status <span class="hljs-title function_">ListEmpty</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//若线性表为空，返回true，否则返回false。</span>
 Status <span class="hljs-title function_">ClearList</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//将线性表清空。</span>
@@ -315,8 +314,8 @@ Status <span class="hljs-title function_">ListInsert</span><span class="hljs-par
 Status <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(*L, i, *E)</span>; <span class="hljs-comment">//删除线性表L中第i个位置元素，并用e返回其值。</span>
 <span class="hljs-type">int</span> <span class="hljs-title function_">ListLength</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//返回线性表L的元素个数。</span>
 Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-params">(*L)</span>; <span class="hljs-comment">//依次访问线性表L的每个元素。</span></code></pre></div>
-
-<h1 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h1><div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span>
+<h1>顺序存储</h1>
+<div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span>
 <span class="hljs-class">&#123;</span>
     <span class="hljs-type">char</span> title[<span class="hljs-number">51</span>];
     <span class="hljs-type">char</span> author[<span class="hljs-number">21</span>];
@@ -329,7 +328,6 @@ Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-p
 	ElemType data[MAXSIZE];
 	<span class="hljs-type">int</span> length;
 &#125; SqList;</code></pre></div>
-
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(SqList *L)</span>
 &#123;
 	L-&gt;length = <span class="hljs-number">0</span>;
@@ -425,8 +423,8 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
 		<span class="hljs-keyword">return</span> OK;
 	&#125;
 &#125;</code></pre></div>
-
-<h1 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h1><div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span></span>
+<h1>链式存储</h1>
+<div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span></span>
 <span class="hljs-class">&#123;</span>
     ElemType data;
     <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">next</span>;</span>
@@ -437,7 +435,6 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
     Node *first;
     Node *last;
 &#125; LinkList;</code></pre></div>
-
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(LinkList *L)</span>
 &#123;
     L-&gt;length = <span class="hljs-number">0</span>;
@@ -517,8 +514,8 @@ Status <span class="hljs-title function_">ListInsert</span><span class="hljs-par
     L-&gt;length++;
     <span class="hljs-keyword">return</span> OK;
 &#125;</code></pre></div>
+<h1>To Be Updated …</h1>
 
-<h1 id="To-Be-Updated-…"><a href="#To-Be-Updated-…" class="headerlink" title="To Be Updated …"></a>To Be Updated …</h1>
                 
               </div>
             
