@@ -130,7 +130,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -147,7 +148,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "207ee7900ecd2f32",
+  "active": "2f124b240acb932a",
   "lastOpenFiles": [
     "Vol.4_LaTeX语法with离散数学.md",
     "逻辑语言.md",
