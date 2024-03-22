@@ -56,7 +56,8 @@ int compar(const void *Ea, const void *Eb)
 
 Status visit(ElemType *E)
 {
-    （注意替换） return OK;
+    （注意替换）
+    return OK;
 }
 ```
 
