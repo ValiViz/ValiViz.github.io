@@ -6,7 +6,7 @@ tags:
 categories:
   - 编程
   - 数据结构
-excerpt: 零个或多个数据元素的有限序列，分为顺序存储结构和链式存储结构两大结构，其中链式存储结构分为单链表、静态链表、循环链表、双向链表等
+excerpt: 线性表是零个或多个数据元素的有限序列，分为顺序存储结构和链式存储结构两大结构，其中链式存储结构分为单链表、静态链表、循环链表、双向链表等
 Vol: "002"
 ---
 # INDEX-Operations
@@ -62,6 +62,8 @@ Status visit(ElemType *E)
 ```
 
 # 顺序存储
+
+![顺序存储结构图](../attachments/Vol.2/SqList.png)
 
 ```C
 typedef struct
@@ -164,7 +166,13 @@ Status unionL(SqList *desk, const SqList *src)
 }
 ```
 
-# 链式存储
+# 链式存储（单向首尾链表）
+
+![链式存储（单向首尾）结构图](../attachments/Vol.2/LinkList_1.png)
+
+![链式存储（单向首尾）结构图](/attachments/Vol.2/LinkList_1.png)
+
+![链式存储（单向首尾）结构图](attachments/Vol.2/LinkList_1.png)
 
 ```C
 typedef struct Node
@@ -302,5 +310,145 @@ Status unionL(LinkList *desk, const LinkList *src)
     }
 }
 ```
+
+# 链式存储（双向循环链表）
+
+```C
+typedef struct Node
+{
+    ElemType data;
+    struct Node *next;
+    struct Node *last
+} Node;
+
+typedef struct
+{
+    int length;
+    Node *top;
+} LinkList;
+```
+
+```C
+Status InitList(LinkList *L)
+{
+    L->length = 0;
+    L->top = (Node *)malloc(sizeof(Node));
+    L->top->next = L->top;
+    L->top->last = NULL;
+    return OK;
+}
+
+Status ListEmpty(const LinkList *L)
+{
+    if (!L->length)
+        return FALSE;
+    return TRUE;
+}
+
+Status ClearList(LinkList *L)
+{
+    InitList(L);
+    return OK;
+}
+
+Status GetElem(const LinkList *L, int i, ElemType *E)
+{
+    if (L->length == 0 || i < 0 || i >= L->length)
+        return ERROR;
+    Node *now = L->top->next;
+    for (int j = 0; j < i; j++)
+    {
+        now = now->next;
+    }
+    *E = now->data;
+    return OK;
+}
+
+int LocateElem(const LinkList *L, const ElemType *E, int (*compar)(const void *, const void *))
+{
+    Node *now = L->top;
+    for (int i = 0; i < L->length; i++)
+    {
+        now = now->next;
+        if (compar(now->data, *E) == 0)
+            return i;
+    }
+    return -1;
+}
+
+Status ListInsert(LinkList *L, int i, const ElemType *E)
+{
+    if (i > L->length || i < 0)
+        return ERROR;
+    Node *now = L->top;
+    if (i == L->length)
+        now = L->last;
+    else
+        for (int j = 0; j < i; j++)
+        {
+            now = now->next;
+        }
+    Node *tmp = now->next;
+    now->next = (Node *)malloc(sizeof(Node));
+    now->next->data = *E;
+    if (i == L->length)
+        L->last = now->next;
+    now->next->next = tmp;
+    L->length++;
+    return OK;
+}
+
+Status ListDelete(LinkList *L, int i, ElemType *E)
+{
+    if (i >= L->length || i < 0)
+        return ERROR;
+    Node *now = L->top;
+    for (int j = 0; j < i; j++)
+    {
+        now = now->next;
+    }
+    if (i == L->length - 1)
+        L->last = now;
+    Node *tmp = now->next;
+    now->next = now->next->next;
+    *E = tmp->data;
+    free(tmp);
+    L->length--;
+    return OK;
+}
+
+int ListLength(const LinkList *L)
+{
+    return L->length;
+}
+
+Status ListTraverse(LinkList *L, Status (*func_visit)(ElemType *))
+{
+    if (L->length <= 0)
+        return ERROR;
+    Node *now = L->top;
+    for (int i = 0; i < L->length; i++)
+    {
+        now = now->next;
+        if (!func_visit(&now->data))
+            return ERROR;
+    }
+    return OK;
+}
+
+Status unionL(LinkList *desk, const LinkList *src)
+{
+    ElemType e;
+    for (int i = 0; i < src->length; i++)
+    {
+        GetElem(src, i, &e);
+        if (!LocateElem(desk, &e, compar))
+            if (!ListInsert(desk, desk->length, &e))
+                return ERROR;
+        return OK;
+    }
+}
+```
+
 
 # To Be Updated...
