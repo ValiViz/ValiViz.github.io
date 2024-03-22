@@ -45,13 +45,13 @@ typedef int Status;
 
 typedef struct
 {
-        （注意替换）
+    （注意替换）
 } ElemType;
 
 int compar(const void *Ea, const void *Eb)
 {
-        ElemType ea = *(ElemType *)Ea, eb = *(ElemType *)Eb;
-        （注意替换）
+    ElemType ea = *(ElemType *)Ea, eb = *(ElemType *)Eb;
+    （注意替换）
 }
 
 Status visit(ElemType *E)
