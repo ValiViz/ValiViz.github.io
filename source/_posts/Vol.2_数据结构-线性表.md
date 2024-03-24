@@ -11,7 +11,7 @@ Vol: "002"
 ---
 # INDEX-Operations
 
-{% note info %}
+{% note warning %}
 本文中的第i个元素均**从0开始**，到length-1结束。
 {% endnote %}
 
@@ -63,7 +63,7 @@ Status visit(ElemType *E)
 
 # 顺序存储
 
-![顺序存储结构图](../attachments/Vol.2/SqList.png)
+![顺序存储结构图](/attachments/Vol.2/SqList.png)
 
 ```C
 typedef struct
@@ -168,11 +168,7 @@ Status unionL(SqList *desk, const SqList *src)
 
 # 链式存储（单向首尾链表）
 
-![链式存储（单向首尾）结构图](../attachments/Vol.2/LinkList_1.png)
-
-![链式存储（单向首尾）结构图](/attachments/Vol.2/LinkList_1.png)
-
-![链式存储（单向首尾）结构图](attachments/Vol.2/LinkList_1.png)
+![链式存储（单向首尾链表）结构图](/attachments/Vol.2/LinkList.png)
 
 ```C
 typedef struct Node
@@ -184,8 +180,8 @@ typedef struct Node
 typedef struct
 {
     int length;
-    Node *top;
-    Node *last;
+    Node *head;
+    Node *rear;
 } LinkList;
 ```
 
@@ -193,9 +189,9 @@ typedef struct
 Status InitList(LinkList *L)
 {
     L->length = 0;
-    L->top = (Node *)malloc(sizeof(Node));
-    L->top->next = NULL;
-    L->last = NULL;
+    L->head = (Node *)malloc(sizeof(Node));
+    L->head->next = NULL;
+    L->rear = NULL;
     return OK;
 }
 
@@ -216,7 +212,7 @@ Status GetElem(const LinkList *L, int i, ElemType *E)
 {
     if (L->length == 0 || i < 0 || i >= L->length)
         return ERROR;
-    Node *now = L->top->next;
+    Node *now = L->head->next;
     for (int j = 0; j < i; j++)
     {
         now = now->next;
@@ -227,7 +223,7 @@ Status GetElem(const LinkList *L, int i, ElemType *E)
 
 int LocateElem(const LinkList *L, const ElemType *E, int (*compar)(const void *, const void *))
 {
-    Node *now = L->top;
+    Node *now = L->head;
     for (int i = 0; i < L->length; i++)
     {
         now = now->next;
@@ -241,9 +237,9 @@ Status ListInsert(LinkList *L, int i, const ElemType *E)
 {
     if (i > L->length || i < 0)
         return ERROR;
-    Node *now = L->top;
-    if (i == L->length)
-        now = L->last;
+    Node *now = L->head;
+    if (i > 0 && i == L->length)
+        now = L->rear;
     else
         for (int j = 0; j < i; j++)
         {
@@ -253,7 +249,7 @@ Status ListInsert(LinkList *L, int i, const ElemType *E)
     now->next = (Node *)malloc(sizeof(Node));
     now->next->data = *E;
     if (i == L->length)
-        L->last = now->next;
+        L->rear = now->next;
     now->next->next = tmp;
     L->length++;
     return OK;
@@ -263,13 +259,13 @@ Status ListDelete(LinkList *L, int i, ElemType *E)
 {
     if (i >= L->length || i < 0)
         return ERROR;
-    Node *now = L->top;
+    Node *now = L->head;
     for (int j = 0; j < i; j++)
     {
         now = now->next;
     }
     if (i == L->length - 1)
-        L->last = now;
+        L->rear = now;
     Node *tmp = now->next;
     now->next = now->next->next;
     *E = tmp->data;
@@ -287,7 +283,7 @@ Status ListTraverse(LinkList *L, Status (*func_visit)(ElemType *))
 {
     if (L->length <= 0)
         return ERROR;
-    Node *now = L->top;
+    Node *now = L->head;
     for (int i = 0; i < L->length; i++)
     {
         now = now->next;
@@ -313,49 +309,51 @@ Status unionL(LinkList *desk, const LinkList *src)
 
 # 链式存储（双向循环链表）
 
+![链式存储（双向循环链表）结构图](/attachments/Vol.2/DulLinkList.png)
+
 ```C
-typedef struct Node
+typedef struct DulNode
 {
     ElemType data;
-    struct Node *next;
-    struct Node *last
-} Node;
+    struct DulNode *next;
+    struct DulNode *prior;
+} DulNode;
 
 typedef struct
 {
     int length;
-    Node *top;
-} LinkList;
+    DulNode *head;
+} DulLinkList;
 ```
 
 ```C
-Status InitList(LinkList *L)
+Status InitList(DulLinkList *L)
 {
     L->length = 0;
-    L->top = (Node *)malloc(sizeof(Node));
-    L->top->next = L->top;
-    L->top->last = NULL;
+    L->head = (DulNode *)malloc(sizeof(DulNode));
+    L->head->next = L->head;
+    L->head->prior = NULL;
     return OK;
 }
 
-Status ListEmpty(const LinkList *L)
+Status ListEmpty(const DulLinkList *L)
 {
     if (!L->length)
         return FALSE;
     return TRUE;
 }
 
-Status ClearList(LinkList *L)
+Status ClearList(DulLinkList *L)
 {
     InitList(L);
     return OK;
 }
 
-Status GetElem(const LinkList *L, int i, ElemType *E)
+Status GetElem(const DulLinkList *L, int i, ElemType *E)
 {
     if (L->length == 0 || i < 0 || i >= L->length)
         return ERROR;
-    Node *now = L->top->next;
+    DulNode *now = L->head->next;
     for (int j = 0; j < i; j++)
     {
         now = now->next;
@@ -364,69 +362,76 @@ Status GetElem(const LinkList *L, int i, ElemType *E)
     return OK;
 }
 
-int LocateElem(const LinkList *L, const ElemType *E, int (*compar)(const void *, const void *))
+int LocateElem(const DulLinkList *L, const ElemType *E, int (*compar)(const void *, const void *))
 {
-    Node *now = L->top;
+    DulNode *now = L->head;
     for (int i = 0; i < L->length; i++)
     {
         now = now->next;
-        if (compar(now->data, *E) == 0)
+        if (compar(&now->data, E) == 0)
             return i;
     }
     return -1;
 }
 
-Status ListInsert(LinkList *L, int i, const ElemType *E)
+Status ListInsert(DulLinkList *L, int i, const ElemType *E)
 {
     if (i > L->length || i < 0)
         return ERROR;
-    Node *now = L->top;
-    if (i == L->length)
-        now = L->last;
+    DulNode *now = L->head;
+    if(L->length == 0)
+    {
+        now->next = (DulNode *)malloc(sizeof(DulNode));
+        now->next->next = now->next->prior = now->next;
+        now->next->data = *E;
+        L->length++;
+        return OK;
+    }
+    if (i > 0 && i == L->length)
+        now = now->next->prior;
     else
         for (int j = 0; j < i; j++)
         {
             now = now->next;
         }
-    Node *tmp = now->next;
-    now->next = (Node *)malloc(sizeof(Node));
-    now->next->data = *E;
-    if (i == L->length)
-        L->last = now->next;
+    DulNode *tmp = now->next;
+    now->next = (DulNode *)malloc(sizeof(DulNode));
     now->next->next = tmp;
+    now->next->prior = tmp->prior;
+    tmp->prior = now->next;
+    now->next->data = *E;
     L->length++;
     return OK;
 }
 
-Status ListDelete(LinkList *L, int i, ElemType *E)
+Status ListDelete(DulLinkList *L, int i, ElemType *E)
 {
     if (i >= L->length || i < 0)
         return ERROR;
-    Node *now = L->top;
+    DulNode *now = L->head;
     for (int j = 0; j < i; j++)
     {
-        now = now->next;
+           now = now->next;
     }
-    if (i == L->length - 1)
-        L->last = now;
-    Node *tmp = now->next;
-    now->next = now->next->next;
+    DulNode *tmp = now->next;
+    now->next = tmp->next;
+    tmp->next->prior = tmp->prior;
     *E = tmp->data;
     free(tmp);
     L->length--;
     return OK;
 }
 
-int ListLength(const LinkList *L)
+int ListLength(const DulLinkList *L)
 {
     return L->length;
 }
 
-Status ListTraverse(LinkList *L, Status (*func_visit)(ElemType *))
+Status ListTraverse(DulLinkList *L, Status (*func_visit)(ElemType *))
 {
     if (L->length <= 0)
         return ERROR;
-    Node *now = L->top;
+    DulNode *now = L->head;
     for (int i = 0; i < L->length; i++)
     {
         now = now->next;
@@ -436,7 +441,7 @@ Status ListTraverse(LinkList *L, Status (*func_visit)(ElemType *))
     return OK;
 }
 
-Status unionL(LinkList *desk, const LinkList *src)
+Status unionL(DulLinkList *desk, const DulLinkList *src)
 {
     ElemType e;
     for (int i = 0; i < src->length; i++)
@@ -450,5 +455,107 @@ Status unionL(LinkList *desk, const LinkList *src)
 }
 ```
 
+# 静态链表
 
-# To Be Updated...
+{% note info %}
+Elem_i.cur = Elem_(i+1).location
+Elem_rear.cur = 0（即无指向）
+StaticLinkList[MAXSIZE - 1].cur = Elem_0.location
+StaticLinkList[MAXSIZE - 2].cur = MemoryForNewElem_rear.cur = 0
+StaticLinkList[0].cur = MemoryForNewElem.location
+While (StaticLinkList[0].cur = MemoryForNewElem_rear.cur = 0)
+    There is no free memory for new elem. In other words, the StaticLinkList is FULL.
+{% endnote %}
+
+```C
+typedef struct
+{
+    ElemType data;
+    int cur; //游标(Cursor) ，为0时表示无指向
+} Component, StaticLinkList[MAXSIZE];
+```
+
+```C
+Status InitList(StaticLinkList *L)
+{
+    int i;
+    for (i = 0; i < MAXSIZE - 1; i++)
+        (*L)[i].cur = i + 1;
+    (*L)[MAXSIZE - 1].cur = 0;
+    return OK;
+}
+
+int Malloc_SSL(StaticLinkList *L)
+{
+    int i = (*L)[0].cur;
+    if (i)
+        (*L)[0].cur = (*L)[i].cur;
+    return i;
+}
+
+void Free_SSL(StaticLinkList *L, int k)
+{
+    (*L)[k].cur = (*L)[0].cur;
+    (*L)[0].cur = k;
+}
+
+int ListLength(const StaticLinkList *L)
+{
+    int j = 0;
+    int i = (*L)[MAXSIZE - 1].cur;
+    while (i)
+    {
+        i = (*L)[i].cur;
+        j++;
+    }
+    return j;
+}
+
+Status ListInsert(StaticLinkList *L, int i, const ElemType *E)
+{
+    int j, k, l;
+    k = MAXSIZE - 1;
+    if (i < 0 || i > ListLength(L))
+        return ERROR;
+    j = Malloc_SSL(L);
+    if (j)
+    {
+        (*L)[j].data = *E;
+        for (l = 0; l < i; l++)
+            k = (*L)[k].cur;
+        (*L)[j].cur = (*L)[k].cur;
+        (*L)[k].cur = j;
+        return OK;
+    }
+    return ERROR;
+}
+
+Status ListDelete(StaticLinkList *L, int i, ElemType *E)
+{
+    int j, k;
+    if (i < 0 || i >= ListLength(L))
+        return ERROR;
+    k = MAXSIZE - 1;
+    for (j = 0; j < i; j++)
+        k = (*L)[k].cur;
+    j = (*L)[k].cur;
+    (*L)[k].cur = (*L)[j].cur;
+    *E = (*L)[j].data;
+    Free_SSL(L, j);
+    return OK;
+}
+
+Status ListTraverse(StaticLinkList *L)
+{
+    int j = 0;
+    int i = (*L)[MAXSIZE - 1].cur;
+    while (i)
+    {
+        if (!func_visit(&(*L)[i].data))
+            return ERROR;
+        i = (*L)[i].cur;
+        j++;
+    }
+    return OK;
+}
+```
