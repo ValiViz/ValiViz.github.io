@@ -1,16 +1,17 @@
 ---
+no: "1"
+version: "1.0"
 title: 基于Hexo和GitHub Pages的个人博客部署
 date: 2024-03-12 10:00:30
+categories:
+  - 教程
 tags:
   - Hexo
   - GItHub
   - Git
   - Blog
-categories:
-  - 教程
-index_img: /attachments/post_1/hexo.png
-banner_img: /attachments/post_1/hexo.png
-Vol: "001"
+index_img: /attachments/1/hexo.png
+banner_img: /attachments/1/hexo.png
 ---
 # 拥有GitHub账号
 

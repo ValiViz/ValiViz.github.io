@@ -1,11 +1,11 @@
 ---
-title: LaTeX语法 | 离散数学
+no: "4"
+version: "null"
+hide: "true"
+title: LaTeX语法
 date: 2024-03-20 20:42:51
 categories:
   - 离散数学
-katex: "true"
-Vol: "004"
-hide: "true"
 ---
 # 0 常规操作
 

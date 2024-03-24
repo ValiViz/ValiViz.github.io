@@ -1,9 +1,10 @@
 ---
-title: Talk About Something
-date: 2024-03-13 16:37:01
+no: "3"
+version: "0.1"
 hide: "true"
 permalink: hiddentalk/
-Vol: "003"
+title: Talk About Something
+date: 2024-03-13 16:37:01
 ---
 # 理性与感性的统一
 
