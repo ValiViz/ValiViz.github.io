@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://valiviz.github.io/attachments/2/LinkList.png">
 <meta property="og:image" content="http://valiviz.github.io/attachments/2/DulLinkList.png">
 <meta property="article:published_time" content="2024-03-24T20:05:00.000Z">
-<meta property="article:modified_time" content="2024-03-24T12:15:30.911Z">
+<meta property="article:modified_time" content="2024-03-26T12:55:02.407Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Boilplate">
 <meta name="twitter:card" content="summary_large_image">
@@ -488,7 +488,7 @@ Status <span class="hljs-title function_">GetElem</span><span class="hljs-params
     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; L-&gt;length; i++)
     &#123;
         now = now-&gt;next;
-        <span class="hljs-keyword">if</span> (compar(now-&gt;data, *E) == <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">if</span> (compar(&amp;now-&gt;data, E) == <span class="hljs-number">0</span>)
             <span class="hljs-keyword">return</span> i;
     &#125;
     <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
