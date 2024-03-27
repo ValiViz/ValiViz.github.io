@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2_线性表_v1.0.md",
+                "file": "5_离散_一_逻辑语言_v2.0.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2_线性表_v1.0.md",
+                "file": "5_离散_一_逻辑语言_v2.0.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2_线性表_v1.0.md",
+                "file": "5_离散_一_逻辑语言_v2.0.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2_线性表_v1.0.md"
+                "file": "5_离散_一_逻辑语言_v2.0.md"
               }
             }
           }
@@ -149,11 +149,11 @@
   },
   "active": "b5b65f99483696e7",
   "lastOpenFiles": [
-    "1_基于Hexo和GitHub-Pages的个人博客部署_v1.0.md",
-    "5_离散_一_逻辑语言_v1.0.md",
     "4_LaTeX_v.null.md",
-    "3_Let's-talk-some_v0.1.md",
+    "5_离散_一_逻辑语言_v2.0.md",
     "2_线性表_v1.0.md",
+    "1_基于Hexo和GitHub-Pages的个人博客部署_v1.0.md",
+    "3_Let's-talk-some_v0.1.md",
     "attachments/2/LinkList.png",
     "attachments/2/DulLinkList.png",
     "attachments/2/LinkList_2.png",
