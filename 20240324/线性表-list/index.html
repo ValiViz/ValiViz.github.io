@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://valiviz.github.io/attachments/2/LinkList.png">
 <meta property="og:image" content="http://valiviz.github.io/attachments/2/DulLinkList.png">
 <meta property="article:published_time" content="2024-03-24T20:05:00.000Z">
-<meta property="article:modified_time" content="2024-03-27T12:20:57.548Z">
+<meta property="article:modified_time" content="2024-03-27T12:42:35.047Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Boilplate">
 <meta name="twitter:card" content="summary_large_image">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.8k 字
         
       </span>
     
@@ -308,7 +308,7 @@ Status <span class="hljs-title function_">ListInsert</span><span class="hljs-par
 Status <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(*L, i, *E)</span>;   <span class="hljs-comment">// 删除线性表L中第i个位置元素，并用e返回其值。</span>
 <span class="hljs-type">int</span> <span class="hljs-title function_">ListLength</span><span class="hljs-params">(*L)</span>;             <span class="hljs-comment">// 返回线性表L的元素个数。</span>
 Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-params">(*L, visit)</span>; <span class="hljs-comment">// 依次访问线性表L的每个元素。</span>
-Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(desk, src)</span>;       <span class="hljs-comment">// 依次在线性表desk中查找线性表src的每个元素，如果查找失败，在线性表desk的末尾插入该元素。</span></code></pre></div>
+Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(desk, src, compar)</span>;       <span class="hljs-comment">// 依次在线性表desk中查找线性表src的每个元素，如果查找失败，在线性表desk的末尾插入该元素。</span></code></pre></div>
 <h1>预处理</h1>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
@@ -371,11 +371,11 @@ Status <span class="hljs-title function_">GetElem</span><span class="hljs-params
     <span class="hljs-keyword">return</span> OK;
 &#125;
 
-<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(<span class="hljs-type">const</span> SqList *L, <span class="hljs-type">const</span> ElemType *E, <span class="hljs-type">int</span> (*compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(<span class="hljs-type">const</span> SqList *L, <span class="hljs-type">const</span> ElemType *E, <span class="hljs-type">int</span> (*func_compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
 &#123;
     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; L-&gt;length; i++)
     &#123;
-        <span class="hljs-keyword">if</span> (compar(&amp;L-&gt;data[i], E) == <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">if</span> (func_compar(&amp;L-&gt;data[i], E) == <span class="hljs-number">0</span>)
             <span class="hljs-keyword">return</span> i;
     &#125;
     <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
@@ -421,13 +421,13 @@ Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-p
     <span class="hljs-keyword">return</span> OK;
 &#125;
 
-Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(SqList *desk, <span class="hljs-type">const</span> SqList *src)</span>
+Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(SqList *desk, <span class="hljs-type">const</span> SqList *src, <span class="hljs-type">int</span> (*func_compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
 &#123;
     ElemType e;
     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; src-&gt;length; i++)
     &#123;
         GetElem(src, i, &amp;e);
-        <span class="hljs-keyword">if</span> (!LocateElem(desk, &amp;e, compar))
+        <span class="hljs-keyword">if</span> (!LocateElem(desk, &amp;e, func_compar))
             <span class="hljs-keyword">if</span> (!ListInsert(desk, desk-&gt;length, &amp;e))
                 <span class="hljs-keyword">return</span> ERROR;
         <span class="hljs-keyword">return</span> OK;
@@ -482,13 +482,13 @@ Status <span class="hljs-title function_">GetElem</span><span class="hljs-params
     <span class="hljs-keyword">return</span> OK;
 &#125;
 
-<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(<span class="hljs-type">const</span> LinkList *L, <span class="hljs-type">const</span> ElemType *E, <span class="hljs-type">int</span> (*compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(<span class="hljs-type">const</span> LinkList *L, <span class="hljs-type">const</span> ElemType *E, <span class="hljs-type">int</span> (*func_compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
 &#123;
     Node *now = L-&gt;head;
     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; L-&gt;length; i++)
     &#123;
         now = now-&gt;next;
-        <span class="hljs-keyword">if</span> (compar(&amp;now-&gt;data, E) == <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">if</span> (func_compar(&amp;now-&gt;data, E) == <span class="hljs-number">0</span>)
             <span class="hljs-keyword">return</span> i;
     &#125;
     <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
@@ -554,13 +554,13 @@ Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-p
     <span class="hljs-keyword">return</span> OK;
 &#125;
 
-Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(LinkList *desk, <span class="hljs-type">const</span> LinkList *src)</span>
+Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(LinkList *desk, <span class="hljs-type">const</span> LinkList *src, <span class="hljs-type">int</span> (*func_compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
 &#123;
     ElemType e;
     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; src-&gt;length; i++)
     &#123;
         GetElem(src, i, &amp;e);
-        <span class="hljs-keyword">if</span> (!LocateElem(desk, &amp;e, compar))
+        <span class="hljs-keyword">if</span> (!LocateElem(desk, &amp;e, func_compar))
             <span class="hljs-keyword">if</span> (!ListInsert(desk, desk-&gt;length, &amp;e))
                 <span class="hljs-keyword">return</span> ERROR;
         <span class="hljs-keyword">return</span> OK;
@@ -615,13 +615,13 @@ Status <span class="hljs-title function_">GetElem</span><span class="hljs-params
     <span class="hljs-keyword">return</span> OK;
 &#125;
 
-<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(<span class="hljs-type">const</span> DulLinkList *L, <span class="hljs-type">const</span> ElemType *E, <span class="hljs-type">int</span> (*compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
+<span class="hljs-type">int</span> <span class="hljs-title function_">LocateElem</span><span class="hljs-params">(<span class="hljs-type">const</span> DulLinkList *L, <span class="hljs-type">const</span> ElemType *E, <span class="hljs-type">int</span> (*func_compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
 &#123;
     DulNode *now = L-&gt;head;
     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; L-&gt;length; i++)
     &#123;
         now = now-&gt;next;
-        <span class="hljs-keyword">if</span> (compar(&amp;now-&gt;data, E) == <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">if</span> (func_compar(&amp;now-&gt;data, E) == <span class="hljs-number">0</span>)
             <span class="hljs-keyword">return</span> i;
     &#125;
     <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
@@ -694,13 +694,13 @@ Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-p
     <span class="hljs-keyword">return</span> OK;
 &#125;
 
-Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(DulLinkList *desk, <span class="hljs-type">const</span> DulLinkList *src)</span>
+Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(DulLinkList *desk, <span class="hljs-type">const</span> DulLinkList *src, <span class="hljs-type">int</span> (*func_compar)(<span class="hljs-type">const</span> <span class="hljs-type">void</span> *, <span class="hljs-type">const</span> <span class="hljs-type">void</span> *))</span>
 &#123;
     ElemType e;
     <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; src-&gt;length; i++)
     &#123;
         GetElem(src, i, &amp;e);
-        <span class="hljs-keyword">if</span> (!LocateElem(desk, &amp;e, compar))
+        <span class="hljs-keyword">if</span> (!LocateElem(desk, &amp;e, func_compar))
             <span class="hljs-keyword">if</span> (!ListInsert(desk, desk-&gt;length, &amp;e))
                 <span class="hljs-keyword">return</span> ERROR;
         <span class="hljs-keyword">return</span> OK;
