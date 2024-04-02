@@ -27,7 +27,6 @@ typedef struct
 
 Status InitQueue(LinkQueue *Q)
 {
-    Q = (LinkQueue *)malloc(sizeof(LinkQueue));
     Q->front = Q->rear = (QNode *)malloc(sizeof(QNode));
     Q->rear->next = NULL;
     return OK;
