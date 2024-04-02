@@ -24,7 +24,7 @@
 <meta property="og:description" content="栈与队列：栈是限定仅在表尾进行插入和删除操作的线性表。队列是只允许在一端进行插入操作、而在另一端进行删除操作的线性表。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-02T10:20:30.000Z">
-<meta property="article:modified_time" content="2024-04-02T09:30:33.439Z">
+<meta property="article:modified_time" content="2024-04-02T11:51:08.956Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Boilplate">
 <meta name="twitter:card" content="summary_large_image">
@@ -236,7 +236,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          790 字
+          770 字
         
       </span>
     
@@ -329,7 +329,6 @@ Status <span class="hljs-title function_">DeQueue</span><span class="hljs-params
 &#125; SqStack;</code></pre></div>
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitStack</span><span class="hljs-params">(SqStack *S)</span>
 &#123;
-    S = (SqStack *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(SqStack));
     S-&gt;top = <span class="hljs-number">-1</span>;
     <span class="hljs-keyword">return</span> OK;
 &#125;
@@ -388,7 +387,6 @@ Status <span class="hljs-title function_">Pop</span><span class="hljs-params">(S
 &#125; LinkStack;</code></pre></div>
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitStack</span><span class="hljs-params">(LinkStack *S)</span>
 &#123;
-    S = (LinkStack *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(LinkStack));
     S-&gt;top = <span class="hljs-literal">NULL</span>;
     <span class="hljs-keyword">return</span> OK;
 &#125;
@@ -461,7 +459,6 @@ Status <span class="hljs-title function_">Pop</span><span class="hljs-params">(L
 &#125; SqQueue;</code></pre></div>
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitQueue</span><span class="hljs-params">(SqQueue *Q)</span>
 &#123;
-    Q = (SqQueue *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(SqQueue));
     Q-&gt;front = Q-&gt;rear = <span class="hljs-number">0</span>;
     <span class="hljs-keyword">return</span> OK;
 &#125;
@@ -523,7 +520,6 @@ Status <span class="hljs-title function_">DeQueue</span><span class="hljs-params
 &#125; LinkQueue;</code></pre></div>
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitQueue</span><span class="hljs-params">(LinkQueue *Q)</span>
 &#123;
-    Q = (LinkQueue *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(LinkQueue));
     Q-&gt;front = Q-&gt;rear = (QNode *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(QNode));
     Q-&gt;rear-&gt;next = <span class="hljs-literal">NULL</span>;
     <span class="hljs-keyword">return</span> OK;

@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://valiviz.github.io/attachments/2/LinkList.png">
 <meta property="og:image" content="http://valiviz.github.io/attachments/2/DulLinkList.png">
 <meta property="article:published_time" content="2024-03-24T20:05:00.000Z">
-<meta property="article:modified_time" content="2024-04-02T09:30:33.439Z">
+<meta property="article:modified_time" content="2024-04-02T11:51:08.956Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Boilplate">
 <meta name="twitter:card" content="summary_large_image">
@@ -345,7 +345,6 @@ Status <span class="hljs-title function_">visit</span><span class="hljs-params">
 &#125; SqList;</code></pre></div>
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(SqList *L)</span>
 &#123;
-    L = (SqList *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(SqList));
     L-&gt;length = <span class="hljs-number">0</span>;
     <span class="hljs-keyword">return</span> OK;
 &#125;
@@ -450,7 +449,6 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
 &#125; LinkList;</code></pre></div>
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(LinkList *L)</span>
 &#123;
-    L = (LinkList *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(LinkList));
     L-&gt;length = <span class="hljs-number">0</span>;
     L-&gt;head = (Node *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));
     L-&gt;head-&gt;next = <span class="hljs-literal">NULL</span>;
@@ -584,7 +582,6 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
 &#125; DulLinkList;</code></pre></div>
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(DulLinkList *L)</span>
 &#123;
-    L = (DulLinkList *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(DulLinkList));
     L-&gt;length = <span class="hljs-number">0</span>;
     L-&gt;head = (DulNode *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(DulNode));
     L-&gt;head-&gt;next = L-&gt;head;
@@ -720,7 +717,6 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
 &#125; Component, StaticLinkList[MAXSIZE];</code></pre></div>
 <div class="code-wrapper"><pre><code class="hljs C">Status <span class="hljs-title function_">InitList</span><span class="hljs-params">(StaticLinkList *L)</span>
 &#123;
-    L = (StaticLinkList *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(StaticLinkList));
     <span class="hljs-type">int</span> i;
     <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; MAXSIZE - <span class="hljs-number">1</span>; i++)
         (*L)[i].cur = i + <span class="hljs-number">1</span>;
