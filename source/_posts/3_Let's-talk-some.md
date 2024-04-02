@@ -1,6 +1,6 @@
 ---
 no: "3"
-version: "0.1"
+version: 0.1.1_a
 hide: "true"
 permalink: hiddentalk/
 title: Talk About Something

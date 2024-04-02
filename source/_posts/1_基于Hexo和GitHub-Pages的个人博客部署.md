@@ -1,6 +1,6 @@
 ---
 no: "1"
-version: "1.0"
+version: 1.0.1
 title: 基于Hexo和GitHub Pages的个人博客部署
 date: 2024-03-12 10:00:30
 categories:
