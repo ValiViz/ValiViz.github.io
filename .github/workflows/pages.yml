@@ -25,6 +25,8 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: Change permissions of files to executable
+        run: chmod +x /*
       - name: Build
         run: npm run build
       - name: Deploy
