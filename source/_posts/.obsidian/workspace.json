@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "6_栈与队列.md",
+                "file": "7.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "6_栈与队列.md",
+                "file": "7.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "6_栈与队列.md",
+                "file": "7.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "6_栈与队列.md"
+                "file": "7.md"
               }
             }
           }
@@ -134,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,10 +147,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b5b65f99483696e7",
+  "active": "2f124b240acb932a",
   "lastOpenFiles": [
-    "3_Let's-talk-some.md",
     "6_栈与队列.md",
+    "3_Let's-talk-some.md",
     "2_线性表.md",
     "5_离散_一_逻辑语言.md",
     "4_LaTeX.md",
