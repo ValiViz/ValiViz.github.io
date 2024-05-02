@@ -347,7 +347,7 @@ navbar:
     - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
-    - { key: "导航", link: "/buaalinks/", icon: "iconfont icon-mini-program-fill" }
+    - { key: "导航", link: "/buaalinks/", icon: "iconfont icon-link-fill" }
 #   - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
 
