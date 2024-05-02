@@ -347,9 +347,9 @@ navbar:
     - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
-    - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+#   - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    - { key: "BUAA-links", link: "/buaalinks/", icon: "iconfont icon-mini-program-fill" }
+    - { key: "BUAA", link: "/buaalinks/", icon: "iconfont icon-mini-program-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -995,7 +995,7 @@ page404:
 # Links Page
 #---------------------------
 links:
-  enable: true
+  enable: false
   banner_img: /img/banner_20240320.png
   banner_img_height: 35
   banner_mask_alpha: 0.3
