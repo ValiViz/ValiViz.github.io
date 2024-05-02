@@ -24,7 +24,7 @@
 <meta property="og:description" content="栈与队列：栈是限定仅在表尾进行插入和删除操作的线性表。队列是只允许在一端进行插入操作、而在另一端进行删除操作的线性表。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-02T10:20:30.000Z">
-<meta property="article:modified_time" content="2024-05-02T12:43:20.807Z">
+<meta property="article:modified_time" content="2024-05-02T12:49:42.357Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Boilplate">
 <meta name="twitter:card" content="summary_large_image">
@@ -289,7 +289,7 @@
             
               <div class="markdown-body">
                 
-                <h1>INDEX-Operations</h1>
+                <h1 id="INDEX-Operations">INDEX-Operations</h1>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-comment">/* Stack */</span>
 Status <span class="hljs-title function_">InitStack</span><span class="hljs-params">(*S)</span>;    <span class="hljs-comment">// 初始化操作，建立一个空栈S。</span>
 Status <span class="hljs-title function_">ClearStack</span><span class="hljs-params">(*S)</span>;   <span class="hljs-comment">// 将栈清空。</span>
@@ -306,7 +306,7 @@ Status <span class="hljs-title function_">GetHead</span><span class="hljs-params
 Status <span class="hljs-title function_">EnQueue</span><span class="hljs-params">(*Q, *E)</span>;
 Status <span class="hljs-title function_">DeQueue</span><span class="hljs-params">(*Q, *E)</span>;
 <span class="hljs-type">int</span> <span class="hljs-title function_">QueueLength</span><span class="hljs-params">(*Q)</span>;</code></pre></div>
-<h1>预处理</h1>
+<h1 id="预处理">预处理</h1>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
 
@@ -321,7 +321,7 @@ Status <span class="hljs-title function_">DeQueue</span><span class="hljs-params
 <span class="hljs-class">&#123;</span>
     （注意替换）
 &#125; ElemType;</code></pre></div>
-<h1>顺序栈</h1>
+<h1 id="顺序栈">顺序栈</h1>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span>
 <span class="hljs-class">&#123;</span>
     ElemType data[MAXSIZE];
@@ -374,7 +374,7 @@ Status <span class="hljs-title function_">Pop</span><span class="hljs-params">(S
 &#123;
     <span class="hljs-keyword">return</span> S-&gt;top + <span class="hljs-number">1</span>;
 &#125;</code></pre></div>
-<h1>链栈</h1>
+<h1 id="链栈">链栈</h1>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">SNode</span></span>
 <span class="hljs-class">&#123;</span>
     ElemType data;
@@ -450,7 +450,7 @@ Status <span class="hljs-title function_">Pop</span><span class="hljs-params">(L
     &#125;
     <span class="hljs-keyword">return</span> count;
 &#125;</code></pre></div>
-<h1>顺序队列</h1>
+<h1 id="顺序队列">顺序队列</h1>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span>
 <span class="hljs-class">&#123;</span>
     ElemType data[MAXSIZE];
@@ -506,7 +506,7 @@ Status <span class="hljs-title function_">DeQueue</span><span class="hljs-params
     Q-&gt;front = (Q-&gt;front + <span class="hljs-number">1</span>) % MAXSIZE;
     <span class="hljs-keyword">return</span> OK;
 &#125;</code></pre></div>
-<h1>链队列</h1>
+<h1 id="链队列">链队列</h1>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">QNode</span></span>
 <span class="hljs-class">&#123;</span>
     ElemType data;

@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://valiviz.github.io/attachments/2/LinkList.png">
 <meta property="og:image" content="http://valiviz.github.io/attachments/2/DulLinkList.png">
 <meta property="article:published_time" content="2024-03-24T20:05:00.000Z">
-<meta property="article:modified_time" content="2024-05-02T12:43:20.807Z">
+<meta property="article:modified_time" content="2024-05-02T12:49:42.357Z">
 <meta property="article:author" content="oNya">
 <meta property="article:tag" content="Boilplate">
 <meta name="twitter:card" content="summary_large_image">
@@ -293,7 +293,7 @@
             
               <div class="markdown-body">
                 
-                <h1>INDEX-Operations</h1>
+                <h1 id="INDEX-Operations">INDEX-Operations</h1>
 <div class="note note-warning">
             <p>本文中的第i个元素均<strong>从0开始</strong>，到length-1结束。</p>
           </div>
@@ -309,7 +309,7 @@ Status <span class="hljs-title function_">ListDelete</span><span class="hljs-par
 <span class="hljs-type">int</span> <span class="hljs-title function_">ListLength</span><span class="hljs-params">(*L)</span>;             <span class="hljs-comment">// 返回线性表L的元素个数。</span>
 Status <span class="hljs-title function_">ListTraverse</span><span class="hljs-params">(*L, visit)</span>; <span class="hljs-comment">// 依次访问线性表L的每个元素。</span>
 Status <span class="hljs-title function_">unionL</span><span class="hljs-params">(desk, src, compar)</span>;       <span class="hljs-comment">// 依次在线性表desk中查找线性表src的每个元素，如果查找失败，在线性表desk的末尾插入该元素。</span></code></pre></div>
-<h1>预处理</h1>
+<h1 id="预处理">预处理</h1>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdio.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;stdlib.h&gt;</span></span>
 
@@ -336,7 +336,7 @@ Status <span class="hljs-title function_">visit</span><span class="hljs-params">
     （注意替换）
     <span class="hljs-keyword">return</span> OK;
 &#125;</code></pre></div>
-<h1>顺序存储</h1>
+<h1 id="顺序存储">顺序存储</h1>
 <p><img src="/attachments/2/SqList.png" srcset="/img/loading.gif" lazyload alt="顺序存储结构图"></p>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span></span>
 <span class="hljs-class">&#123;</span>
@@ -433,7 +433,7 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
         <span class="hljs-keyword">return</span> OK;
     &#125;
 &#125;</code></pre></div>
-<h1>链式存储（单向首尾链表）</h1>
+<h1 id="链式存储（单向首尾链表）">链式存储（单向首尾链表）</h1>
 <p><img src="/attachments/2/LinkList.png" srcset="/img/loading.gif" lazyload alt="链式存储（单向首尾链表）结构图"></p>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span></span>
 <span class="hljs-class">&#123;</span>
@@ -566,7 +566,7 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
         <span class="hljs-keyword">return</span> OK;
     &#125;
 &#125;</code></pre></div>
-<h1>链式存储（双向循环链表）</h1>
+<h1 id="链式存储（双向循环链表）">链式存储（双向循环链表）</h1>
 <p><img src="/attachments/2/DulLinkList.png" srcset="/img/loading.gif" lazyload alt="链式存储（双向循环链表）结构图"></p>
 <div class="code-wrapper"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">DulNode</span></span>
 <span class="hljs-class">&#123;</span>
@@ -706,7 +706,7 @@ Status <span class="hljs-title function_">unionL</span><span class="hljs-params"
         <span class="hljs-keyword">return</span> OK;
     &#125;
 &#125;</code></pre></div>
-<h1>静态链表</h1>
+<h1 id="静态链表">静态链表</h1>
 <div class="note note-info">
             <p>Elem_i.cur = Elem_(i+1).location<br>Elem_rear.cur = 0（即无指向）<br>StaticLinkList[MAXSIZE - 1].cur = Elem_0.location<br>StaticLinkList[MAXSIZE - 2].cur = MemoryForNewElem_rear.cur = 0<br>StaticLinkList[0].cur = MemoryForNewElem.location<br>While (StaticLinkList[0].cur = MemoryForNewElem_rear.cur = 0)<br>There is no free memory for new elem. In other words, the StaticLinkList is FULL.</p>
           </div>
